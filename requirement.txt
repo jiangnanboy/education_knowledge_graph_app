@@ -1,0 +1,7 @@
+1.neo4j-community-3.5.20
+2.pyhanlp 0.1.66
+3.django 2.2.16
+4.py2neo  2020.0.0
+5.apoc 3.5.0.13-all
+6.pytorch 1.5
+7.torchtext 0.6.0

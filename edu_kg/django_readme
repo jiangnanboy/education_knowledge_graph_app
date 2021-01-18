@@ -1,0 +1,93 @@
+1.django-admin startproject 项目的名称: 创建了项目
+
+2.manange.py:项目管理的主程序,在开发阶段用于管理整个项目的开发运行的调式
+    (1).python3 manage.py runserver 启动服务
+    (2).python3 manage.py startapp 创建应用
+    (3).python3 manage.py migrate 数据库迁移
+
+3.settings.py: 保存项目所有的配置信息
+    (1).Django项目的配置文件, 此配置文件中的一些全局变量将为Django框架的运行传递一些参数
+    (2).setting.py 配置文件,启动服务时自动调用，
+    (3).此配置文件中也可以定义一些自定义的变量用于作用全局作用域的数据传递
+
+4.urls.py: 项目的基础路由配置文件，所有的动态路径必须先走该文件进行匹配。用来做url与视图函数（views.py）做映射的，以后的每个请求，都会在这里找到视图函数
+
+5.wsig.py:web服务网关接口的配置文件，仅做部署用，不需要修改
+
+6.视图函数是用于接收一个浏览器请求并通过HttpResponse对象返回数据的函数。此函数可以接收浏览器请求并根据业务逻辑返回相应的内容给浏览器
+
+视图处理的函数的语法格式:
+
+def xxx_view(request[, 其它参数...]):
+    return HttpResponse对象
+
+参数:
+
+request用于绑定HttpRequest对象，通过此对象可以获取浏览器的参数和数据
+示例:
+
+视图处理函数 views.py
+
+# file : <项目名>/views.py
+from django.http import HttpResponse
+def page1_view(request):
+    html = "<h1>这是第1个页面</h1>"
+    return HttpResponse(html)
+
+7.utls.py：主路由配置
+        url() 函数
+
+用于描述路由与视图函数的对应关系
+模块
+from django.conf.urls import url
+语法:
+url(regex, views, name=None)
+参数：
+regex: 字符串类型，匹配的请求路径，允许是正则表达式
+views: 指定路径所对应的视图处理函数的名称
+name: 为地址起别名，在模板中地址反向解析时使用
+每个正则表达式前面的r表示'\'不转义的原始字符串
+
+8.
+9.
+10.
+
+
+
+
+
+
+
+django project  框架目录结构
+|my_project             //项目名 后期可修改建议不修改
+|--- __init__.py        //python项目必带  模块化思想
+|--- settings.py        //项目的总配置文件  里面包含数据库 web应用 时间等各种配置
+|--- urls.py            //URL配置文件  Django项目中所有地址中（页面）都需要我们自己去配置其URL
+|--- wsgi.py            //python服务器网关接口
+|manage.py              //django项目管理文件 与项目进行交互的命令行工具集的入口
+|------------------------------------------------------------------------
+
+django 应用目录结构
+project1
+|-- migrations                         //数据移植（迁移）模块
+|------- __init__.py
+|-- __init__.py
+|-- admin.py                            //该应用后台管理系统配置
+|-- apps.py                             //该应用的一些配置 1.9以后自动生成
+|-- models.py                           //数据模块
+|-- tests.py                            //自动化测试模块  在这里编写测试脚本
+|-- views.py                            //执行响应的代码所在模块  代码逻辑处理主要地点  项目大部分代码在此编写
+|--templates                            //模板 放置模板文件的文件夹  包括HTML css JavaScript的文件夹
+---------------------------
+MTV模式
+ M:model，模型，负责与数据库交互
+ V:view，视图是核心，负责接收请求、获取数据、返回结果
+ T:template，模板，负责呈现内容到浏览器
+
+
+通常 一个Django model 对应一张数据表，model是以类的形式表现的
+实现了ORM 对象与数据库映射 隐藏了数据访问细节 不需要写sql语句
+
+admin是Django自带的    自动化数据管理界面
+
+数据取出顺序 models->views->templates  数据层->逻辑视图层->前端模板层
