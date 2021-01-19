@@ -1,4 +1,4 @@
-# 教育知识图谱及问答
+# 教育学科知识图谱及问答
     功能主要包括学科及题目知识点查询、关系查询以及问答等。
     前端页面参考：https://github.com/qq547276542/Agriculture_KnowledgeGraph，在此表示非常感谢。
     此项目也参考了作者之前的电影图谱：https://github.com/jiangnanboy/movie_knowledge_graph_app，具体细节可参考此项目。
@@ -26,12 +26,12 @@
 
 打开：http://127.0.0.1:8000/
 
-### 一.学科知识点查询
+### 一.学科知识点图谱
     输入学科名将展示整个学科知识体系
 ![image](https://raw.githubusercontent.com/jiangnanboy/education_knowledge_graph_app/master/img/course.png)
 
-### 二.题目知识点查询
-    输入题目id，可追踪该题目所包含的所有知识点
+### 二.题目知识点追踪
+    输入题目id，可追踪该题目所包含的所有知识点(子知识点 -> 父知识点 -> 根知识点)
 ![image](https://raw.githubusercontent.com/jiangnanboy/education_knowledge_graph_app/master/img/question.png)
 
 ### 三.关系查询
@@ -48,10 +48,9 @@
     
     (3).意图识别
      
-        这里使用textcnn进行意图识别，具体训练代码见https://github.com/jiangnanboy/intent_classification/tree/master/textcnn。
+        这里使用textcnn进行意图识别，具体训练代码见https://github.com/jiangnanboy/intent_classification/tree/master/textcnn
         训练好的model及加载方式在本项目edu_kg/util下
 
-    
     2.意图识别后，利用pyhanlp进行实体识别(槽填充)。
     
     3.将识别的意图以及提取的槽位(即识别的实体)转为cypher语言，在neo4j中进行查询得到答案
