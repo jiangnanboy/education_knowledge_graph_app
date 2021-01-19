@@ -43,11 +43,20 @@
     1.利用分类模型对用户输入的问题进行意图识别
     
     (1).训练数据在目录 https://github.com/jiangnanboy/intent_classification/tree/master/classification_data/knowledge_point_qa_data.csv
+        训练数据为自己手动构造，构造的数据不多，但足够分类。
     
-    (2).总共9个意图类别，见目录 https://github.com/jiangnanboy/intent_classification/tree/master/classification_data/knowledge_point_qa_classification.txt
+    (2).总共9个意图类别，如下：
+        0:知识点A包含哪些知识点？
+        1:包含知识点A的知识点是什么？
+        2:知识点A的定义(概念)是什么？(暂无数据)
+        3:知识点A怎么计算的(计算方式)？(暂无数据)
+        4:包含知识点A的题目有哪些？
+        5:包含知识点A的题目还包含哪些知识点?
+        6:包含知识点A的题目题型有哪些？
+        7:包含知识点A的题目的复杂度如何？
+        8:知识点A的知识路径是什么？
     
     (3).意图识别
-     
         这里使用textcnn进行意图识别，具体训练代码见https://github.com/jiangnanboy/intent_classification/tree/master/textcnn
         训练好的model及加载方式在本项目edu_kg/util下
 
