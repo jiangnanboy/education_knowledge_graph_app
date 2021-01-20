@@ -1,10 +1,10 @@
 # 教育学科知识图谱及问答
-    功能主要包括学科及题目知识点查询、关系查询以及问答等。
+    功能主要包括学科知识图谱以及题目知识点追踪、关系查询以及问答等。
     前端页面参考：https://github.com/qq547276542/Agriculture_KnowledgeGraph，在此表示非常感谢。
     此项目也参考了作者之前的电影图谱：https://github.com/jiangnanboy/movie_knowledge_graph_app，具体细节可参考此项目。
     
 ## 准备数据及构建实体及关系
-    数据为知识点和题目。构建方式如https://github.com/jiangnanboy/movie_knowledge_graph_app。
+    数据为知识点和题目，利用neo4j进行构建。构建方式如https://github.com/jiangnanboy/movie_knowledge_graph_app。
     
 ## 项目结构
 ```
@@ -22,7 +22,7 @@
 
 ## 功能模块
 
-本地启动命令：python manage.py runserver (或 edu_kg\run.bat)
+本地启动django命令：python manage.py runserver (或 edu_kg\run.bat)
 
 打开：http://127.0.0.1:8000/
 
