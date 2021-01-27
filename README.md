@@ -65,7 +65,7 @@
         利用分类模型预测用户提问的意图类别，将不同的意图类别转换为不同的cypher语言，从neo4j中查询得到答案。
 ![image](https://raw.githubusercontent.com/jiangnanboy/education_knowledge_graph_app/master/img/qa.png)
 
-#### 五.知识点预测
+### 五.知识点预测
 
     1.利用多标签分类模型对输入的题目进行知识点标注
     
