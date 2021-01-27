@@ -1,5 +1,5 @@
 # 教育学科知识图谱及问答
-    功能主要包括学科知识图谱以及题目知识点追踪、关系查询以及问答等。
+    功能主要包括学科知识图谱以及题目知识点追踪、关系查询、问答及知识点预测等。
     前端页面参考：https://github.com/qq547276542/Agriculture_KnowledgeGraph，在此表示非常感谢。
     此项目也参考了作者之前的电影图谱：https://github.com/jiangnanboy/movie_knowledge_graph_app，具体细节可参考此项目。
     
@@ -42,8 +42,7 @@
 
     1.利用分类模型对用户输入的问题进行意图识别
     
-    (1).训练数据在目录 https://github.com/jiangnanboy/intent_classification/tree/master/classification_data/knowledge_point_qa_data.csv
-        训练数据为自己手动构造，构造的数据不多，但足够分类。
+    (1).模型的构建及训练见https://github.com/jiangnanboy/intent_classification
     
     (2).总共9个意图类别，如下：
         0:知识点A包含哪些知识点？
@@ -58,13 +57,24 @@
     
     (3).意图识别
         这里使用textcnn进行意图识别，具体训练代码见https://github.com/jiangnanboy/intent_classification/tree/master/textcnn
-        训练好的model及加载方式在本项目edu_kg/util下
+        训练好的model及加载方式在本项目edu_kg/util下。
 
     2.意图识别后，利用pyhanlp进行实体识别(槽填充)。
     
     3.将识别的意图以及提取的槽位(即识别的实体)转为cypher语言，在neo4j中进行查询得到答案
         利用分类模型预测用户提问的意图类别，将不同的意图类别转换为不同的cypher语言，从neo4j中查询得到答案。
 ![image](https://raw.githubusercontent.com/jiangnanboy/education_knowledge_graph_app/master/img/qa.png)
+
+#### 五.知识点预测
+
+    1.利用多标签分类模型对输入的题目进行知识点标注
+    
+    (1).多标签模型的构建及训练见https://github.com/jiangnanboy/knowledge-automatic-tagging。
+    
+    (2).训练好的model及加载方式在edu_kg/util下。
+    
+![image](https://raw.githubusercontent.com/jiangnanboy/education_knowledge_graph_app/master/img/kp_predict.png)    
+
   
 ### `作者的qq，如您有什么想法可以和作者联系：2229029156。`
 

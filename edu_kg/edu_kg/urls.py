@@ -21,6 +21,7 @@ from django.conf.urls import url
 from . import index_view
 from . import relation_view
 from . import question_answering
+from . import kp_predict
 
 '''
 urlpatterns 是一个路由-视图函数映射关系的列表,此列表的映射关系由url函数来确定
@@ -43,4 +44,5 @@ urlpatterns = [
     url(r'^search_question_knowledgepoint', relation_view.search_question_knowledgepoint),
     url(r'^search_relation',relation_view.search_relation),
     url(r'^qa', question_answering.question_answering),
+    url(r'^kp_predict', kp_predict.kp_predict)
 ]
