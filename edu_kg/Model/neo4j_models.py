@@ -13,13 +13,13 @@ class Question():
 
 class Neo4j_Handle():
 	graph = None
-	matcher = None
+	# matcher = None
 	def __init__(self):
 		pass
 
 	def connectNeo4j(self):
 		self.graph = Graph("http://127.0.0.1:7474", username="neo4j", password="123")
-		self.matcher = NodeMatcher(self.graph)
+		# self.matcher = NodeMatcher(self.graph)
 
 	# 一.科目知识点大全
 	def course_knowledgepoint(self, name) -> list:

@@ -12,7 +12,7 @@ kp_predict_model,kp_words,knowledge_points,stopwords_set = kp_predict_model_dict
 # 测试模式
 kp_predict_model.eval()
 
-# 知识点预测
+# multi-label 知识点预测
 def kp_predict(request):
 	context = {'ctx':''}
 	if(request.GET):
